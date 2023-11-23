@@ -20,7 +20,7 @@
                             <label for="" class="form-label">Cantidad de Estudiantes</label>
                             <input type="number" step="1" name="estudiantes" id="" class="form-control" placeholder="" aria-describedby="helpId" value="{{ $oferta->cantidad_estudiantes }}">
                             <label for="" class="form-label">Salario</label>
-                            <input type="number" step="0.10 " name=salario"" id="" class="form-control" placeholder="" aria-describedby="helpId" value="{{ $oferta->salario }}">
+                            <input type="number" step="0.10 " name="salario" id="" class="form-control" placeholder="" aria-describedby="helpId" value="{{ $oferta->salario }}">
                             <label for="" class="form-label">Descripción de Proyecto</label>
                             <textarea name="descripcion" id="" cols="80" rows="10" class="form-control">{{ $oferta->descripcion_proyecto}}</textarea>
                             <label for="" class="form-label">Fecha de inicio</label>
