@@ -30,6 +30,7 @@ class OfertaController extends Controller
         $oferta->fecha_max_aplicar = $request->fecha_max;
         $oferta->save();
         //redirigir al index del controlador
+        return redirect()->route('home');
     }
 
     public function eliminar($id)
