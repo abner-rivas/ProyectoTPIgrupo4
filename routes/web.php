@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\OfertaController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth; // Add this line
 
@@ -22,3 +23,8 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::controller(OfertaController::class)->group(function(){
+    Route::get('/ofertas/editar/{oferta}', 'editar')->name('ofertas.editar');
+    Route::put('/ofertas/actualizar/{id}', 'actualizar')->name('ofertas.actualizar');
+    Route::delete('/ofertas/eliminar/{id}', 'eliminar')->name('ofertas.eliminar');
+});
