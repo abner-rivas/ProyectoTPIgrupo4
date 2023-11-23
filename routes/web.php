@@ -31,6 +31,7 @@ Route::middleware(['auth.check'])->group(function () {
         Route::get('/ofertas/editar/{oferta}', 'editar')->name('ofertas.editar');
         Route::put('/ofertas/actualizar/{id}', 'actualizar')->name('ofertas.actualizar');
         Route::delete('/ofertas/eliminar/{id}', 'eliminar')->name('ofertas.eliminar');
+        Route::get('/ofertas', 'index')->name('ofertas.index');
     });
 
     //Poner aquí las rutas que se quieran proteger

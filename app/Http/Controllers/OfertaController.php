@@ -38,4 +38,13 @@ class OfertaController extends Controller
         Oferta::destroy($id);
         //redirigir al index del controlador
     }
+
+    //Obtener las ofertas con el id del usuario logueado
+    public function index()
+    {
+        $ofertas = Oferta::where('id_empresa', auth()->user()->id)->get();
+        //return View('ofertas.index', ['ofertas' => $ofertas]);
+        //retonar las ofertas del usuario logueado en un json
+        return response()->json($ofertas);
+    }
 }
