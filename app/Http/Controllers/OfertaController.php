@@ -13,9 +13,17 @@ class OfertaController extends Controller
 
     //Create
 
-    public function create( )
+    public function create(Request $request)
     {
-        return view('ofertas.create');
+        $oferta = new Oferta();
+        $oferta->id_empresa = $request->empresa;
+        $oferta->puesto = $request->puesto;
+        $oferta->carreras_solicitadas = $request->carreras;
+        $oferta->salario = $request->salario;
+        $oferta->descripcion_proyecto = $request->descripcion;
+        $oferta->fecha_max_aplicar = $request->fecha_max;
+        $oferta->save();
+        return redirect()->route('ofertas.index');
     }
 
     public function editar(Oferta $oferta)

@@ -32,7 +32,7 @@ Route::middleware(['auth.check'])->group(function () {
         Route::put('/ofertas/actualizar/{id}', 'actualizar')->name('ofertas.actualizar');
         Route::delete('/ofertas/eliminar/{id}', 'eliminar')->name('ofertas.eliminar');
         Route::get('/ofertas/index', 'index')->name('ofertas.index');
-        Route::post('/ofertas/create', 'create')->name('ofertas.create'); //menciona un error de que el metodo post no es soportado por la funcion
+        Route::get('/ofertas/create', 'create')->name('ofertas.create'); //menciona un error de que el metodo post no es soportado por la funcion
     });
 
     //Intento de querer hacer funcionar ingresar un registro (create)
