@@ -5,12 +5,18 @@ namespace App\Http\Controllers;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
 use App\Models\Oferta;
+use Illuminate\Support\Facades\DB;
 
 class OfertaController extends Controller
 {
     //Index
 
     //Create
+
+    public function create( )
+    {
+        return view('ofertas.create');
+    }
 
     public function editar(Oferta $oferta)
     {
@@ -42,9 +48,13 @@ class OfertaController extends Controller
     //Obtener las ofertas con el id del usuario logueado
     public function index()
     {
-        $ofertas = Oferta::where('id_empresa', auth()->user()->id)->get();
-        //return View('ofertas.index', ['ofertas' => $ofertas]);
+        //$ofertas = Oferta::where('id_empresa', auth()->user()->id)->get();
+        //return View('ofertas.show', ['show' => $ofertas]);
         //retonar las ofertas del usuario logueado en un json
-        return response()->json($ofertas);
+        //return response()->json($ofertas);
+        //$oferta = Oferta::select("select ofertas * from ");
+        //return $oferta;
+        $oferta = DB::select("select * from ofertas");
+        return view("ofertas.index")->with("oferta", $oferta);
     }
 }

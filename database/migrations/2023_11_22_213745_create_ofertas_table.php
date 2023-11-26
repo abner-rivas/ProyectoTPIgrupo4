@@ -21,8 +21,8 @@ return new class extends Migration
             $table->double("salario")->nullable();
             $table->string("descripcion_proyecto");
             $table->timestamp("fecha_inicio");
-            $table->timestamp("fecha_fin");
-            $table->timestamp("fecha_max_aplicar");
+            $table->timestamp("fecha_fin")->useCurrent();            ;
+            $table->timestamp("fecha_max_aplicar")->useCurrent();
             $table->foreign("id_empresa")->references("id")->on("users");
         });
     }
